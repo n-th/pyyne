@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "strictNullChecks": true,
+      "target": "es2021"
+    },
+    "include": ["**/*.ts"],
+    "exclude": ["node_modules"],
+    "esModuleInterop": true
+  }
+  

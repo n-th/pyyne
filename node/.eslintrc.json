@@ -1,0 +1,19 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "standard-with-typescript",
+    "overrides": [
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./node/tsconfig.json",
+      "ecmaVersion": "latest"
+    },
+    "plugins": ["@typescript-eslint"],
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": "off"
+    },
+    "include": ["**/*.test.ts"]
+}
