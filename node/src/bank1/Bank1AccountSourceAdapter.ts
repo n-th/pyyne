@@ -12,10 +12,6 @@ class Bank1AccountSourceAdapter implements AccountSourceAdapter {
     this.bankName = 'bank1'
   }
 
-  setBank1AccountSource (source: Bank1AccountSource) {
-    this.bank1AccountSource = source
-  }
-
   getAccountBalance (accountId: number): AccountBalanceAdapter {
     const balance = this.bank1AccountSource.getAccountBalance(accountId)
     const currency = this.bank1AccountSource.getAccountCurrency(accountId)

@@ -10,7 +10,7 @@ describe('Bank2AccountSourceAdapter', () => {
     adapter = {
       bankName: 'mockedBank2',
       bank2AccountSource: mockBank2AccountSource,
-      getAccountBalance: jest.fn().mockReturnValue(new Bank2AccountBalance(500, 'USD')),
+      getAccountBalance: jest.fn().mockReturnValue(new Bank2AccountBalance(222, 'USD')),
       getTransactions: jest.fn().mockReturnValue([
         new Bank2AccountTransaction(100, TRANSACTION_TYPES.CREDIT, 'Transaction 1'),
         new Bank2AccountTransaction(200, TRANSACTION_TYPES.DEBIT, 'Transaction 2')
@@ -20,17 +20,18 @@ describe('Bank2AccountSourceAdapter', () => {
 
   describe('getAccountBalance', () => {
     it('should return the account balance', () => {
-      const result = adapter.getAccountBalance(123)
-      expect(result.getBalance()).toBe(500)
+      const result = adapter.getAccountBalance(2)
+      expect(result.getBalance()).toBe(222)
       expect(result.getCurrency()).toBe('USD')
     })
   })
 
   describe('getTransactions', () => {
-    it('should return the account transactions', () => {
+    it('should return an array of account transactions', () => {
+      const accountId = 2
       const fromDate = new Date()
       const toDate = new Date()
-      const result = adapter.getTransactions(123, fromDate, toDate)
+      const result = adapter.getTransactions(accountId, fromDate, toDate)
       expect(result).toBeInstanceOf(Array)
       expect(result).toHaveLength(2)
       expect(result[0].getAmount()).toBe(100)
