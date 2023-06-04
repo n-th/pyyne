@@ -4,12 +4,12 @@ import { type AccountBalanceAdapter, type AccountSourceAdapter, type AccountTran
 import { Bank2AccountTransactionAdapter } from './Bank2AccountTransactionAdapter'
 
 class Bank2AccountSourceAdapter implements AccountSourceAdapter {
-  private bank2AccountSource: Bank2AccountSource
+  private readonly bank2AccountSource: Bank2AccountSource
   bankName: string
 
   constructor () {
     this.bank2AccountSource = new Bank2AccountSource()
-    this.bankName = "bank2"
+    this.bankName = 'bank2'
   }
 
   getAccountBalance (accountId: number): AccountBalanceAdapter {

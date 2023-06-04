@@ -1,14 +1,14 @@
-import { AccountSourceAdapter, BankController } from './BankController';
+import { type AccountSourceAdapter, BankController } from './BankController'
 
 describe('BankController', () => {
   const originalConsoleLog = console.log
 
-  const HARDCODED_ACCOUNT_ID = 1;
+  const HARDCODED_ACCOUNT_ID = 1
   let adapter1: any
   let adapter2: any
   let controller: BankController
 
-  afterAll(()=> {
+  afterAll(() => {
     console.log = originalConsoleLog
   })
 

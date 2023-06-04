@@ -13,8 +13,8 @@ describe('Bank1AccountSourceAdapter', () => {
       const accountId = 123
       const balance = 500.0
       const currency = 'USD'
-      jest.spyOn(adapter['bank1AccountSource'], 'getAccountBalance').mockReturnValue(balance)
-      jest.spyOn(adapter['bank1AccountSource'], 'getAccountCurrency').mockReturnValue(currency)
+      jest.spyOn(adapter.bank1AccountSource, 'getAccountBalance').mockReturnValue(balance)
+      jest.spyOn(adapter.bank1AccountSource, 'getAccountCurrency').mockReturnValue(currency)
 
       const result = adapter.getAccountBalance(accountId)
 
@@ -30,10 +30,10 @@ describe('Bank1AccountSourceAdapter', () => {
       const toDate = new Date('2023-12-31')
       const data = [
         { amount: 100, type: 1, text: 'Transaction 1' },
-        { amount: 200, type: 2, text: 'Transaction 2' },
+        { amount: 200, type: 2, text: 'Transaction 2' }
       ]
-      const transactions: Bank1Transaction[] = data.map(obj => new Bank1Transaction(obj.amount, obj.type, obj.text));
-      jest.spyOn(adapter['bank1AccountSource'], 'getTransactions').mockReturnValue(transactions)
+      const transactions: Bank1Transaction[] = data.map(obj => new Bank1Transaction(obj.amount, obj.type, obj.text))
+      jest.spyOn(adapter.bank1AccountSource, 'getTransactions').mockReturnValue(transactions)
 
       const result = adapter.getTransactions(accountId, fromDate, toDate)
 

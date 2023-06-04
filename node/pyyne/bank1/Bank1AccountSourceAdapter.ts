@@ -5,15 +5,15 @@ import { Bank1AccountTransactionAdapter } from './Bank1AccountTransactionAdapter
 
 class Bank1AccountSourceAdapter implements AccountSourceAdapter {
   private bank1AccountSource: Bank1AccountSource
-  bankName: string;
+  bankName: string
 
   constructor () {
     this.bank1AccountSource = new Bank1AccountSource()
-    this.bankName = "bank1"
+    this.bankName = 'bank1'
   }
 
-  setBank1AccountSource(source: Bank1AccountSource) {
-    this.bank1AccountSource = source;
+  setBank1AccountSource (source: Bank1AccountSource) {
+    this.bank1AccountSource = source
   }
 
   getAccountBalance (accountId: number): AccountBalanceAdapter {

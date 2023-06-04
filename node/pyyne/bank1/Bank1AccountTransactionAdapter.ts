@@ -1,4 +1,4 @@
-import { Bank1Transaction } from '../../bank1/Bank1Transaction'
+import { type Bank1Transaction } from '../../bank1/Bank1Transaction'
 import { type AccountTransactionAdapter } from '../bank/common'
 
 class Bank1AccountTransactionAdapter implements AccountTransactionAdapter {

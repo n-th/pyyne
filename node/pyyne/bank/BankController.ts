@@ -15,7 +15,7 @@ class BankController {
   printBalances () {
     console.log(`Account ${this.accountId} balance:`)
     for (const adapter of this.adapters) {
-      console.log("BANK ", adapter.bankName )
+      console.log('BANK ', adapter.bankName)
       const balance = adapter.getAccountBalance(this.accountId)
       console.log(`Balance: ${balance.getBalance()}`)
       console.log(`Currency: ${balance.getCurrency()}`)
@@ -26,7 +26,7 @@ class BankController {
   printTransactions () {
     console.log(`Account ${this.accountId} transactions:`)
     for (const adapter of this.adapters) {
-      console.log("BANK ", adapter.bankName )
+      console.log('BANK ', adapter.bankName)
       const transactions = adapter.getTransactions(this.accountId, new Date(), new Date())
       transactions.forEach(transaction => {
         console.log(`Amount: ${transaction.getAmount()}`)
@@ -38,4 +38,4 @@ class BankController {
   }
 }
 
-export { BankController, AccountSourceAdapter }
+export { BankController, type AccountSourceAdapter }

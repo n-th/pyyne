@@ -1,21 +1,20 @@
-import { Bank2AccountBalance } from '../../bank2/Bank2AccountBalance';
-import { Bank2AccountSource } from '../../bank2/Bank2AccountSource';
-import { Bank2AccountTransaction, TRANSACTION_TYPES } from '../../bank2/Bank2AccountTransaction';
-
+import { Bank2AccountBalance } from '../../bank2/Bank2AccountBalance'
+import { type Bank2AccountSource } from '../../bank2/Bank2AccountSource'
+import { Bank2AccountTransaction, TRANSACTION_TYPES } from '../../bank2/Bank2AccountTransaction'
 
 describe('Bank2AccountSourceAdapter', () => {
   let adapter: any
   let mockBank2AccountSource: jest.Mocked<Bank2AccountSource>
-  
+
   beforeEach(() => {
     adapter = {
-      bankName: "mockedBank2",
+      bankName: 'mockedBank2',
       bank2AccountSource: mockBank2AccountSource,
       getAccountBalance: jest.fn().mockReturnValue(new Bank2AccountBalance(500, 'USD')),
       getTransactions: jest.fn().mockReturnValue([
         new Bank2AccountTransaction(100, TRANSACTION_TYPES.CREDIT, 'Transaction 1'),
         new Bank2AccountTransaction(200, TRANSACTION_TYPES.DEBIT, 'Transaction 2')
-      ]),
+      ])
     }
   })
 
