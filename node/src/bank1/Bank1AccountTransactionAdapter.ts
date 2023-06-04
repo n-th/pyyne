@@ -1,4 +1,5 @@
 import { type Bank1Transaction } from '../../bank1/Bank1Transaction'
+import { TRANSACTION_TYPES } from '../../bank2/Bank2AccountTransaction'
 import { type AccountTransactionAdapter } from '../bank/common'
 
 class Bank1AccountTransactionAdapter implements AccountTransactionAdapter {
@@ -12,9 +13,9 @@ class Bank1AccountTransactionAdapter implements AccountTransactionAdapter {
     return this.transaction.getAmount()
   }
 
-  getType (): number {
+  getType (): string {
     return (
-      this.transaction.getType()
+      this.transaction.getType() === 1 ? TRANSACTION_TYPES.CREDIT : TRANSACTION_TYPES.DEBIT
     )
   }
 

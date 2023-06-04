@@ -1,4 +1,4 @@
-import { Bank1AccountSource } from '../../bank1/Bank1AccountSource'
+import { type Bank1AccountSource } from '../../bank1/Bank1AccountSource'
 import { Bank1Transaction } from '../../bank1/Bank1Transaction'
 import { Bank2AccountBalance } from '../../bank2/Bank2AccountBalance'
 

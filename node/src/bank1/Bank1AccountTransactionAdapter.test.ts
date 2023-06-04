@@ -1,4 +1,5 @@
 import { Bank1Transaction } from '../../bank1/Bank1Transaction'
+import { TRANSACTION_TYPES } from '../../bank2/Bank2AccountTransaction'
 import { Bank1AccountTransactionAdapter } from './Bank1AccountTransactionAdapter'
 
 describe('Bank1AccountTransactionAdapter', () => {
@@ -19,14 +20,14 @@ describe('Bank1AccountTransactionAdapter', () => {
   describe('getType', () => {
     it('should return the transaction type as a string', () => {
       const result = adapter.getType()
-      expect(result).toBe(Bank1Transaction.TYPE_CREDIT)
+      expect(result).toBe(TRANSACTION_TYPES.CREDIT)
     })
 
     it('should return the transaction type as a string for debit', () => {
       const debitTransaction = new Bank1Transaction(200, Bank1Transaction.TYPE_DEBIT, 'Debit transaction')
       adapter = new Bank1AccountTransactionAdapter(debitTransaction)
       const result = adapter.getType()
-      expect(result).toBe(Bank1Transaction.TYPE_DEBIT)
+      expect(result).toBe(TRANSACTION_TYPES.DEBIT)
     })
   })
 

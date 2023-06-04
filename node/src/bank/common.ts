@@ -15,7 +15,7 @@ interface AccountBalanceAdapter {
 
 interface AccountTransactionAdapter {
   getAmount: () => number
-  getType: () => string | number
+  getType: () => string
   getText: () => string
 }
 

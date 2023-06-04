@@ -4,7 +4,7 @@ import { Bank1AccountBalanceAdapter } from './Bank1AccountBalanceAdapter'
 import { Bank1AccountTransactionAdapter } from './Bank1AccountTransactionAdapter'
 
 class Bank1AccountSourceAdapter implements AccountSourceAdapter {
-  private bank1AccountSource: Bank1AccountSource
+  private readonly bank1AccountSource: Bank1AccountSource
   bankName: string
 
   constructor () {
