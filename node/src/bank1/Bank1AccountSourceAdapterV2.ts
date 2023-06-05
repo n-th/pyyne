@@ -2,6 +2,7 @@ import { Bank1AccountSource } from '../../bank1/Bank1AccountSource'
 import { TRANSACTION_TYPES } from '../../bank2/Bank2AccountTransaction'
 import { type AccountBalanceAdapter, type AccountSourceAdapter, type AccountTransactionAdapter } from '../bank/common'
 
+//not creating new instances of Bank1AccountTransactionAdapter can lead to improved performance, reduced memory usage, simplified code, and increased flexibility
 class Bank1AccountSourceAdapterV2 implements AccountSourceAdapter {
   private readonly bank1AccountSource: Bank1AccountSource
   bankName: string

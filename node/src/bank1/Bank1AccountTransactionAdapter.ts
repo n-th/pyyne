@@ -13,6 +13,7 @@ class Bank1AccountTransactionAdapter implements AccountTransactionAdapter {
     return this.transaction.getAmount()
   }
 
+  //consistency between adapters
   getType (): string {
     return (
       this.transaction.getType() === 1 ? TRANSACTION_TYPES.CREDIT : TRANSACTION_TYPES.DEBIT
